@@ -42,10 +42,8 @@ python manage.py runserver
 ```
 Dataset: https://gist.github.com/artrey/8d6a3f2d91cefb5e6343bedbc9ef8c79
 ```
-### Примеры
+### Примеры запросов:
 ---
-Примеры запросов (ваши запросы могут отличаться, главное, чтобы они выполняли поставленную задачу):
-
 1. Показать сырые данные вида `Date - Visitors - Earnings`
 ```bash
 api/v1/metrics/?show=date&show=visitors&show=earnings
