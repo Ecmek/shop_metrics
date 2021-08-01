@@ -36,7 +36,7 @@ python csv_to_bd.py
 ```
 python manage.py runserver
 ```
-# В данном проекте использовано LimitOffsetPagination, по умолчанию на 100 записей. Для изминения перейдите в settings.py
+### В данном проекте использовано LimitOffsetPagination, по умолчанию на 100 записей. Для изминения перейдите в settings.py
 
 ### Ссылка на использованные данные:
 ```
