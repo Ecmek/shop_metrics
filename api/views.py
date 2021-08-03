@@ -13,7 +13,7 @@ class ShopList(generics.ListAPIView):
 
     def get_queryset(self):
         queryset = Shop.objects.all()
-        groups = dict(self.request.GET).get('group')
+        groups = self.request.GET.getlist('group')
         if groups:
             queryset = queryset.values(*groups).annotate(visitors=Sum('visitors'), earnings=Sum('earnings'))
         return queryset

@@ -6,16 +6,16 @@ from .models import Shop
 class ShopSerializer(serializers.ModelSerializer):
 
     def __init__(self, *args, **kwargs):
-        super(ShopSerializer, self).__init__(*args, **kwargs)
-        show = dict(self.context['request'].GET).get('show')
-        group = dict(self.context['request'].GET).get('group')
+        super().__init__(*args, **kwargs)
+        show = self.context['request'].GET.getlist('show')
+        group = self.context['request'].GET.getlist('group')
         fields = None
+        if group:
+            fields = group
+        if show:
+            fields = show
         if show and group:
             fields = show+group
-        elif show:
-            fields = show
-        elif group:
-            fields = group
         if fields:
             # Drop any fields that are not specified in the `fields` argument.
             allowed = set(fields)
