@@ -1,5 +1,4 @@
 from django_filters import rest_framework as filters
-from django.db.models import Sum
 
 from .models import Shop
 
@@ -12,7 +11,3 @@ class ShopFilter(filters.FilterSet):
     class Meta:
         model = Shop
         fields = ['date_from', 'date_to', 'date', 'country', 'shop', 'visitors', 'earnings']
-
-
-def get_annotation(keys):
-    return {key: Sum(key) for key in keys}

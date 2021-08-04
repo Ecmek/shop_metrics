@@ -1,6 +1,7 @@
 from rest_framework import generics
+from django.db.models import Sum
 
-from .filters import ShopFilter, get_annotation
+from .filters import ShopFilter
 from .models import Shop
 from .serializers import ShopSerializer
 
@@ -13,7 +14,7 @@ class ShopList(generics.ListAPIView):
     def get_queryset(self):
         queryset = Shop.objects.all()
         groups = self.request.GET.getlist('group')
-        shows = self.request.GET.getlist('show')
         if groups:
-            queryset = queryset.values(*groups).annotate(**get_annotation(shows))
+            shows = self.request.GET.getlist('show')
+            queryset = queryset.values(*groups).annotate(**{show: Sum(show) for show in shows})
         return queryset
