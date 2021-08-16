@@ -28,9 +28,9 @@ pip install -r requirements.txt
 ```
 python manage.py migrate
 ```
-Перейдите в каталог с файлом csv_to_bd.py и запустите его, чтобы наполнить бд данными:
+Заполнить бд данными:
 ```
-python csv_to_bd.py
+python manage.py load_data
 ```
 Запуск проекта:
 ```
