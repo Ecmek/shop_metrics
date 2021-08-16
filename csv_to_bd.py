@@ -1,4 +1,5 @@
 import os
+import csv
 
 import django
 import pandas as pd
@@ -12,7 +13,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def main():
     df = pd.read_csv(
-        f'{BASE_DIR}/static/shop_metrics.csv', delimiter=',',
+        f'{BASE_DIR}/static/data/shop_metrics.csv', delimiter=',',
     )
     shop_metrics = [
         Shop(
