@@ -7,5 +7,5 @@ pandas==1.3.1
 python-dateutil==2.8.2
 pytz==2021.1
 six==1.16.0
-sqlparse==0.4.1
+sqlparse==0.4.2
 typing-extensions==3.10.0.0
