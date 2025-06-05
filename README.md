@@ -38,10 +38,6 @@ python manage.py runserver
 ```
 ### В данном проекте использовано LimitOffsetPagination, по умолчанию на 100 записей. Для изминения перейдите в settings.py
 
-### Ссылка на использованные данные:
-```
-Dataset: https://gist.github.com/artrey/8d6a3f2d91cefb5e6343bedbc9ef8c79
-```
 ### Примеры запросов:
 ---
 1. Показать сырые данные вида `Date - Visitors - Earnings`
